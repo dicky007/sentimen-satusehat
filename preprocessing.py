@@ -7,6 +7,22 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
 
+
+# Mengunduh resource NLTK yang dibutuhkan TextBlob / Tokenizer
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('corpora/brown')
+except LookupError:
+    nltk.download('brown')
+
+# Jika butuh stopwords atau resource lain, tambahkan juga di sini:
+nltk.download('stopwords')
+nltk.download('wordnet')
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 NLTK_DATA_DIR = os.path.join(BASE_DIR, 'nltk_data')
 
