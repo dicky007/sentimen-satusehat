@@ -1,0 +1,4 @@
+nltk_data/
+*.pickle
+__pycache__/
+.env
